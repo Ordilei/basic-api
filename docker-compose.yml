@@ -1,0 +1,16 @@
+version: '3'
+services:
+  api-mobile:
+    image: basic-api:master-v1  
+    links:
+      - mysql  
+    ports:
+      - "8080:8080"
+
+  mysql:
+    image: mysql:5.7.22
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: jenkins
