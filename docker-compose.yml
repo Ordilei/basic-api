@@ -2,15 +2,14 @@ version: '3'
 services:
   api-mobile:
     image: basic-api:master-v1  
+    environment:
+     - FLASK_APP=run.py
     links:
-      - mysql  
+      - redis  
     ports:
       - "8080:8080"
 
-  mysql:
-    image: mysql:5.7.22
+  redis:
+    image: redis:4.0.9
     ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: jenkins
+      - "6379:6379"
