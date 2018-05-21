@@ -5,7 +5,13 @@
 - docker-compose
 - terraform
 
+
+
 ## Usage
+Antes da aplicação subir a aplicação 
+buildar o app local
+docker build -t basic-api:master-v1 .
+
 executar api no pipeline 
  docker-compose up -d 
 
